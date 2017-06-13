@@ -1,4 +1,4 @@
-package adventure;
+package giffmeds;
 
 
 import org.springframework.boot.SpringApplication;

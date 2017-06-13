@@ -1,18 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
-    }
-}
-
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-
-jar {
-    baseName = 'adventure'
-    version =  '0.1.0'
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '1.5.4.RELEASE'
 }
 
 repositories {
@@ -25,4 +13,9 @@ dependencies {
         exclude module: "spring-boot-starter-tomcat"
     }
     compile 'org.springframework.boot:spring-boot-starter-undertow:1.5.3.RELEASE'
+}
+
+jar {
+    baseName = 'giffmeds'
+    version =  '0.1.0'
 }
