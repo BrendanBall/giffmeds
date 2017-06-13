@@ -1,6 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+	"id": "giffmeds",
+  "name": "Giffmeds",
+	"description": "A perscription dapp",
+	"version": "0.1",
+	"author": "The Jedi",
+	"iconUrl": "icon.png",
   "icons": [
     {
       "src": "favicon.ico",
