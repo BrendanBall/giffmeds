@@ -5,8 +5,9 @@ import {
     Link
 } from 'react-router-dom'
 
-import Home from './Home.js'
-import About from './About.js'
+import Home from './Home'
+import About from './About'
+import Prescriptions from './Prescriptions'
 
 class AppRouter extends Component {
     render() {
@@ -16,12 +17,14 @@ class AppRouter extends Component {
                     <h1>Giff Meds</h1>
                     <lu>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">Prescriptions</Link>
+                        </li>
+                        <li>
                             <Link to="/about">About</Link>
                         </li>
                     </lu>
 
-                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/" component={Prescriptions}/>
                     <Route path="/about" component={About}/>
                 </nav>
             </Router>
