@@ -1,27 +1,9 @@
 [
   {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "prescriber",
-        "type": "address"
-      },
-      {
-        "name": "patientId",
-        "type": "string"
-      },
-      {
-        "name": "index",
-        "type": "uint256"
-      }
-    ],
-    "name": "getPrescriptions",
-    "outputs": [
-      {
-        "name": "",
-        "type": "string"
-      }
-    ],
+    "constant": false,
+    "inputs": [],
+    "name": "kill",
+    "outputs": [],
     "payable": false,
     "type": "function"
   },
@@ -30,11 +12,11 @@
     "inputs": [
       {
         "name": "patientId",
-        "type": "string"
+        "type": "bytes32"
       },
       {
         "name": "prescription",
-        "type": "string"
+        "type": "bytes32"
       }
     ],
     "name": "prescribe",
@@ -45,16 +27,30 @@
   {
     "constant": false,
     "inputs": [],
-    "name": "kill",
+    "name": "mortal",
     "outputs": [],
     "payable": false,
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "mortal",
-    "outputs": [],
+    "constant": true,
+    "inputs": [
+      {
+        "name": "prescriber",
+        "type": "address"
+      },
+      {
+        "name": "patientId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getPrescriptions",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32[]"
+      }
+    ],
     "payable": false,
     "type": "function"
   },
@@ -69,12 +65,12 @@
       {
         "indexed": false,
         "name": "patientId",
-        "type": "string"
+        "type": "bytes32"
       },
       {
         "indexed": false,
         "name": "prescription",
-        "type": "string"
+        "type": "bytes32"
       }
     ],
     "name": "Prescribed",

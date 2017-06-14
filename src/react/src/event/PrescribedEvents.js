@@ -1,5 +1,4 @@
 import React from 'react';
-import { reverse } from 'lodash';
 import { ReactiveComponent } from 'oo7-react';
 import Event from './Event';
 

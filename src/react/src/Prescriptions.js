@@ -6,21 +6,16 @@ import { InputBond } from 'parity-reactive-ui';
 import PrescriptionABI from './contracts/prescription';
 import PrescribedEvents from './event/PrescribedEvents';
 import Accounts from './account/Accounts';
+import PrescItem from './prescription/PrescItem';
 
 class Prescriptions extends Component {
   constructor() {
     super();
-    this.state = { index: 0 };
-    this.prescription = bonds.makeContract('0xa467cd21466ED98BDE8b1E28223B7eaBfF67a3CD', PrescriptionABI);
+    this.prescription = bonds.makeContract('0x14Cd83FCeA686FF64121573a141AA9da20d64491', PrescriptionABI);
     this.prescribed = this.prescription.Prescribed();
 
     this.patientId = new Bond();
     this.account = new Bond();
-    this.handleSliderChange = this.handleSliderChange.bind(this);
-  }
-
-  handleSliderChange(event) {
-    this.setState({ index: event.target.value });
   }
 
   render() {
@@ -35,9 +30,8 @@ class Prescriptions extends Component {
         Patient Id:&nbsp;
         <InputBond bond={this.patientId} placeholder="Throw something in here"/>
         <br/>
-        <Rspan>{this.prescription.getPrescriptions(this.account, this.patientId, this.state.index)}</Rspan>
-        <br/>
-        <input type="range" min="0" max="5" value={this.state.index} onChange={this.handleSliderChange} />
+        <Rspan>{this.prescription.getPrescriptions(this.account, this.patientId)}</Rspan>
+        <PrescItem prescriptions={this.prescription.getPrescriptions(this.account, this.patientId)} />
 
         <br/>
         <br/>

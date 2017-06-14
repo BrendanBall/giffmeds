@@ -30,4 +30,8 @@ contract Prescription is killable {
         }
         return prescriptions[prescriber][patientId][index];
     }
+
+    function getPrescriptionCount(address prescriber, string patientId) constant returns (uint) {
+        return prescriptions[prescriber][patientId].length;
+    }
 }
