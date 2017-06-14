@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bonds } from 'oo7-parity';
 import { Bond } from 'oo7';
 import { Rspan } from 'oo7-react';
-import { InputBond, AccountIcon } from 'parity-reactive-ui';
+import { InputBond } from 'parity-reactive-ui';
 import PrescriptionABI from './contracts/prescription';
 import PrescribedEvents from './event/PrescribedEvents';
 import Accounts from './account/Accounts';
