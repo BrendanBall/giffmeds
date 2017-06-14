@@ -8,24 +8,22 @@ import {
 import Home from './Home.js'
 import About from './About.js'
 
-import AppBar from 'react-toolbox/lib/app_bar';
-import Navigation from 'react-toolbox/lib/navigation';
-
 class AppRouter extends Component {
     render() {
         return (
             <Router>
-                <div>
-                    <AppBar title='Giff Meds'>
-                        <Navigation type='horizontal'>
-                            <Link to='/'>Home</Link>
-                            <Link to='/about'>About</Link>
-                        </Navigation>
-                    </AppBar>
+                <nav>
+                    <h1>Giff Meds</h1>
+                    <lu>
+                        <li>
+                            <Link to="/">Home</Link>
+                            <Link to="/about">About</Link>
+                        </li>
+                    </lu>
 
                     <Route exact path="/" component={Home}/>
                     <Route path="/about" component={About}/>
-                </div>
+                </nav>
             </Router>
         );
     }
