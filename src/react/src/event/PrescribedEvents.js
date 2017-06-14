@@ -15,7 +15,7 @@ export default class PrescribedEvent extends ReactiveComponent {
 
     return (
       <div>
-        {reverse(this.state.events).map((e, i) => <Event key={`prescription-event-${i}`} event={e} />)}
+        {this.state.events.map((e, i) => <Event key={`prescription-event-${i}`} event={e} />)}
       </div>
     );
   }
