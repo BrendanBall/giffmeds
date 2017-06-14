@@ -1,6 +1,4 @@
 import React from 'react';
-import { bonds } from 'oo7-parity';
-import { Rspan } from 'oo7-react';
 import { ReactiveComponent } from 'oo7-react';
 import { AccountLabel } from 'parity-reactive-ui';
 
