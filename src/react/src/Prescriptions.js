@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { bonds } from 'oo7-parity';
 import { Bond } from 'oo7';
 import { Rspan } from 'oo7-react';
-import { InputBond } from 'parity-reactive-ui';
+import { InputBond, AccountIcon } from 'parity-reactive-ui';
 import PrescriptionABI from './contracts/prescription';
 import PrescribedEvents from './event/PrescribedEvents';
+import Accounts from './account/Accounts';
 
-class Bonds extends Component {
+class Prescriptions extends Component {
   constructor() {
     super();
     this.state = { index: 0 };
@@ -14,6 +15,7 @@ class Bonds extends Component {
     this.prescribed = this.prescription.Prescribed();
 
     this.patientId = new Bond();
+    this.account = new Bond();
     this.handleSliderChange = this.handleSliderChange.bind(this);
   }
 
@@ -24,10 +26,16 @@ class Bonds extends Component {
   render() {
     return (
       <div>
+        <Accounts accounts={bonds.accounts} />
+        <br/>
+        <br/>
+        Account:&nbsp;
+        <InputBond bond={this.account} placeholder="Throw something in here"/>
+        <br/>
         Patient Id:&nbsp;
         <InputBond bond={this.patientId} placeholder="Throw something in here"/>
         <br/>
-        <Rspan>{this.prescription.getPrescriptions('0x00cC75B1A50588971c755b42b3376E8CfB9BdBc2', this.patientId, this.state.index)}</Rspan>
+        <Rspan>{this.prescription.getPrescriptions(this.account, this.patientId, this.state.index)}</Rspan>
         <br/>
         <input type="range" min="0" max="5" value={this.state.index} onChange={this.handleSliderChange} />
 
@@ -39,5 +47,4 @@ class Bonds extends Component {
   }
 }
 
-export default Bonds;
-
+export default Prescriptions;
