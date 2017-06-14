@@ -1,0 +1,83 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "prescriber",
+        "type": "address"
+      },
+      {
+        "name": "patientId",
+        "type": "string"
+      },
+      {
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPrescriptions",
+    "outputs": [
+      {
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "patientId",
+        "type": "string"
+      },
+      {
+        "name": "prescription",
+        "type": "string"
+      }
+    ],
+    "name": "prescribe",
+    "outputs": [],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "kill",
+    "outputs": [],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "mortal",
+    "outputs": [],
+    "payable": false,
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "name": "prescriber",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "patientId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "prescription",
+        "type": "string"
+      }
+    ],
+    "name": "Prescribed",
+    "type": "event"
+  }
+]

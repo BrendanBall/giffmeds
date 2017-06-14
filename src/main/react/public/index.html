@@ -20,6 +20,11 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+	  <script src="/parity-utils/parity.js"></script>
+    <script>
+      window.parity.api._transport._connectTimeout = -1;
+      window.parity.api._subscriptions.subscribe = () => Promise.resolve(1);
+    </script>
   </head>
   <body>
     <noscript>
