@@ -1,4 +1,5 @@
 import React from 'react';
+import { reverse } from 'lodash';
 import { ReactiveComponent } from 'oo7-react';
 import Event from './Event';
 
@@ -14,7 +15,7 @@ export default class PrescribedEvent extends ReactiveComponent {
 
     return (
       <div>
-        {this.state.events.map((e, i) => <Event key={`prescription-event-${i}`} event={e} />)}
+        {reverse(this.state.events).map((e, i) => <Event key={`prescription-event-${i}`} event={e} />)}
       </div>
     );
   }

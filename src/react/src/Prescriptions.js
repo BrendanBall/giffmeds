@@ -11,7 +11,7 @@ class Prescriptions extends Component {
   constructor() {
     super();
     this.state = { index: 0 };
-    this.prescription = bonds.makeContract('0x17E0fE7138dC4eAb0DCaDd7825e5c600681C828a', PrescriptionABI);
+    this.prescription = bonds.makeContract('0xa467cd21466ED98BDE8b1E28223B7eaBfF67a3CD', PrescriptionABI);
     this.prescribed = this.prescription.Prescribed();
 
     this.patientId = new Bond();
